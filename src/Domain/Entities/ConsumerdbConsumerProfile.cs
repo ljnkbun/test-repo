@@ -1,0 +1,141 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Infra;
+
+public partial class ConsumerdbConsumerProfile
+{
+    public int Id { get; set; }
+
+    public DateTime CreationTime { get; set; }
+
+    public long? CreatorUserId { get; set; }
+
+    public DateTime? LastModificationTime { get; set; }
+
+    public long? LastModifierUserId { get; set; }
+
+    public bool IsDeleted { get; set; }
+
+    public long? DeleterUserId { get; set; }
+
+    public DateTime? DeletionTime { get; set; }
+
+    public int TenantId { get; set; }
+
+    public string? MemberCode { get; set; }
+
+    public string? Name { get; set; }
+
+    public string? Phone { get; set; }
+
+    public string? Email { get; set; }
+
+    public string? Gender { get; set; }
+
+    public long? Birthday { get; set; }
+
+    public long? RegistrationDate { get; set; }
+
+    public string? Pid { get; set; }
+
+    public string? SourceId { get; set; }
+
+    public bool ReceiveAds { get; set; }
+
+    public string? RankCode { get; set; }
+
+    public long? RankValidDate { get; set; }
+
+    public decimal? CurrentPoint { get; set; }
+
+    public string? NationalityCode { get; set; }
+
+    public string? OccupationCode { get; set; }
+
+    public string? Hobby { get; set; }
+
+    public string? Address { get; set; }
+
+    public string? Ward { get; set; }
+
+    public string? District { get; set; }
+
+    public string? Province { get; set; }
+
+    public string? Country { get; set; }
+
+    public string? Status { get; set; }
+
+    public DateTime? LastActivityTime { get; set; }
+
+    public DateTime? LastPurchaseTime { get; set; }
+
+    public string? CommunicationLanguage { get; set; }
+
+    public string? Notes { get; set; }
+
+    public string? RankPropose { get; set; }
+
+    public string? Pincode { get; set; }
+
+    public string? NameUnSign { get; set; }
+
+    public string? Avatar { get; set; }
+
+    public bool WorkingPermit { get; set; }
+
+    public string? CustomerCode { get; set; }
+
+    public string? InterestOf { get; set; }
+
+    public bool IsInterestCobrand { get; set; }
+
+    public string? MemberCard { get; set; }
+
+    public bool IsForeigner { get; set; }
+
+    public bool IsSynced { get; set; }
+
+    public string? ReferralCode { get; set; }
+
+    public decimal? AccumulationPoint { get; set; }
+
+    public string? OutletCode { get; set; }
+
+    public string? ZaloName { get; set; }
+
+    public string? DistributorCode { get; set; }
+
+    public string? DistributorName { get; set; }
+
+    public string? RegionCode { get; set; }
+
+    public decimal? TargetRevenue { get; set; }
+
+    public decimal? ActualRevenue { get; set; }
+
+    public decimal? Bonus { get; set; }
+
+    public decimal? MissingRevenue { get; set; }
+
+    public long? RevenueUpdateDate { get; set; }
+
+    public string? Note1 { get; set; }
+
+    public string? Note2 { get; set; }
+
+    public string? Note3 { get; set; }
+
+    public string? Note4 { get; set; }
+
+    public string? Note5 { get; set; }
+
+    public string? MetaData { get; set; }
+
+    public string? CommunicationChannels { get; set; }
+
+    public string? SalesManCode { get; set; }
+
+    public string? ConsumerType { get; set; }
+}

@@ -5,7 +5,7 @@ namespace Core.Extensions
 {
     public class GeneralMapping
     {
-        public static TDestination Map<TSource, TDestination>(TSource source)
+        public static TDestination Map<TSource, TDestination>(TSource? source)
         where TDestination : class, new()
         {
             return (TDestination)MapInternal(source, typeof(TDestination), new HashSet<object>());
@@ -13,8 +13,8 @@ namespace Core.Extensions
 
         private static object MapInternal(object source, Type destinationType, HashSet<object> visited)
         {
-            if (source == null) return null;
-            if (visited.Contains(source)) return null; // chống loop
+            if (source == null) return null!;
+            if (visited.Contains(source)) return null!; // chống loop
             visited.Add(source);
 
             var srcType = source.GetType();

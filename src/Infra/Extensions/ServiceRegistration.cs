@@ -10,8 +10,13 @@ namespace Infra.Extensions
         public static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddDbContext<CmxDBContext>(options => options.UseSqlServer(
-                    configuration.GetConnectionString("DefaultConnection")!)
+            services.AddDbContext<DBReadDbContext>(options => options.UseSqlServer(
+                    configuration.GetConnectionString("DBReadConnection")!)
+                    .EnableSensitiveDataLogging()
+            );
+
+            services.AddDbContext<DBWriteDbContext>(options => options.UseSqlServer(
+                    configuration.GetConnectionString("DBWriteConnection")!)
                     .EnableSensitiveDataLogging()
             );
 

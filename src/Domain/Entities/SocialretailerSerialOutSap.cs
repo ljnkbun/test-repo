@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+
+namespace Infra;
+
+public partial class SocialretailerSerialOutSap
+{
+    public int Id { get; set; }
+
+    public DateTime CreationTime { get; set; }
+
+    public long? CreatorUserId { get; set; }
+
+    public DateTime? LastModificationTime { get; set; }
+
+    public long? LastModifierUserId { get; set; }
+
+    public bool IsDeleted { get; set; }
+
+    public long? DeleterUserId { get; set; }
+
+    public DateTime? DeletionTime { get; set; }
+
+    public int TenantId { get; set; }
+
+    public string? Serial { get; set; }
+
+    public string? ProductCode { get; set; }
+
+    public bool IsScanOut { get; set; }
+
+    public int Year { get; set; }
+
+    public int Month { get; set; }
+
+    public string? SerialType { get; set; }
+
+    public string? ReasonDelete { get; set; }
+
+    public string? Description { get; set; }
+}

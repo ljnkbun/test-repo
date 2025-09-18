@@ -1,17 +1,29 @@
-﻿using Core.Models;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Domain.Entities
+namespace Infra;
+
+public partial class Permission
 {
-    public class Permission : BaseEntity
-    {
-        public string PermissionCode { get; set; } = default!;
+    public long Id { get; set; }
 
-        public string PermissionName { get; set; } = default!;
+    public DateTime CreationTime { get; set; }
 
-        public int? PermissionParentId { get; set; }
+    public long? CreatorUserId { get; set; }
 
-        public int? PermissionRefId { get; set; }
+    public int? TenantId { get; set; }
 
-        public string? Description { get; set; }
-    }
+    public string Name { get; set; } = null!;
+
+    public bool IsGranted { get; set; }
+
+    public string Discriminator { get; set; } = null!;
+
+    public int? RoleId { get; set; }
+
+    public long? UserId { get; set; }
+
+    public virtual Role? Role { get; set; }
+
+    public virtual User? User { get; set; }
 }

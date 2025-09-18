@@ -1,10 +1,9 @@
-﻿using Core.Models;
+﻿using System;
+using System.Collections.Generic;
 
-namespace Domain.Entities
+namespace Infra;
+
+public partial class Test
 {
-    public class Test : BaseEntity
-    {
-        public string Code { get; set; } = default!;
-        public string Name { get; set; } = default!;
-    }
+    public int? Test1 { get; set; }
 }
