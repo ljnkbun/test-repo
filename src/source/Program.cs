@@ -3,6 +3,7 @@ using Application.Extensions;
 using Core.Extensions;
 using Infra.Extensions;
 using Microsoft.OpenApi.Models;
+using source.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +13,15 @@ var configuration = new ConfigurationBuilder()
     .AddJsonFile("appsettings.Development.json")
     .AddEnvironmentVariables()
     .Build();
-
+//HttpContextAccessor
 builder.Services.AddHttpContextAccessor();
+//infra
 builder.Services.AddInfrastructure(configuration);
+//application
 builder.Services.AddApplication();
 builder.Services.AddHealthChecks();
 
+//cors
 builder.Services.AddCors(options =>
 {
     options.AddDefaultPolicy(
@@ -27,6 +31,7 @@ builder.Services.AddCors(options =>
     });
 });
 
+//json
 builder.Services.AddControllers().AddJsonOptions(opt =>
 {
     opt.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
@@ -82,6 +87,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.MapControllers();
+
+//cors
 app.UseCors(builder => builder
        .AllowAnyHeader()
        .AllowAnyMethod()
@@ -89,10 +96,13 @@ app.UseCors(builder => builder
     );
 app.UseHttpsRedirection();
 
-app.UseAuthentication();
-app.UseAuthorization();
+//authen author
+//app.UseAuthentication();
+//app.UseAuthorization();
+app.UseMiddleware<JwtMiddleware>();
 
 app.MapControllers();
+//global error handler
 app.UseSharedMiddleware();
 
 app.Run();
